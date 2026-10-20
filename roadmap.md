@@ -77,6 +77,43 @@ Centang (`- [x]`) sambil jalan. Target realistis: **1 modul per 2–4 hari** kal
 
 ---
 
+## Fase 3.5 — Security Engineering Track (paling cocok JD ALTO)
+
+> Track B (Modul 10–14). Boleh dikerjakan paralel dengan Track A — ini yang paling ditanyakan untuk posisi ALTO.
+
+### Modul 10 — DevSecOps & CI/CD
+- [ ] Bisa jelaskan DevSecOps & "shift left"
+- [ ] Paham CI vs CD, dan tools (Jenkins/GitLab/Ansible)
+- [ ] Bisa bedakan SAST, DAST, SCA, secret scanning
+- [ ] Paham patch management & vulnerability management
+
+### Modul 11 — Cryptography & PKI
+- [ ] Bisa bedakan encoding, hashing, encryption
+- [ ] Paham simetris vs asimetris, dan kenapa TLS pakai keduanya
+- [ ] Paham data at rest / in transit / in use
+- [ ] Bisa jelaskan sertifikat digital, chain of trust, tanda tangan digital
+- [ ] Paham pentingnya manajemen kunci (HSM, rotasi)
+
+### Modul 12 — IAM
+- [ ] Bisa bedakan authentication vs authorization
+- [ ] Paham MFA & faktor autentikasi
+- [ ] Paham RBAC vs ABAC, least privilege, SoD
+- [ ] Bisa bedakan OAuth 2.0 vs OIDC vs SAML
+- [ ] Paham deprovisioning & access review
+
+### Modul 13 — AppSec & OWASP Top 10
+- [ ] Hafal + paham minimal 7 dari OWASP Top 10
+- [ ] Bisa jelaskan SQLi, XSS, CSRF, IDOR + pencegahannya
+- [ ] Paham prepared statements, output encoding, CSP
+
+### Modul 14 — Scripting & Automation
+- [ ] Bisa tulis Bash untuk analisis log (grep/awk/sort/uniq)
+- [ ] Bisa tulis PowerShell dasar untuk Event Log & proses
+- [ ] Bisa tulis Python dasar untuk parsing/enrichment (API)
+- [ ] Paham Ansible (idempotency) & konsep SOAR
+
+---
+
 ## Fase 4 — Praktik (Minggu 8+)
 
 ### Study Cases

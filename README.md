@@ -46,6 +46,8 @@ FONDASI                    INVESTIGASI                 PRAKTIK
                            09 Threat Intel & IOC   ┘
 ```
 
+### Track A — SOC / Blue Team (Modul 01–09)
+
 | # | Modul | Kamu akan bisa... |
 | --- | --- | --- |
 | 01 | [Foundations](modules/01-foundations.md) | Menjelaskan cara kerja komputer, jaringan, OS, dan konsep inti keamanan (CIA, AAA) |
@@ -57,6 +59,20 @@ FONDASI                    INVESTIGASI                 PRAKTIK
 | 07 | [Incident Response](modules/07-incident-response.md) | Menjalankan alur IR (NIST), triage, containment, dan tahu beda L1/L2/L3 |
 | 08 | [Endpoint & EDR](modules/08-endpoint-edr.md) | Membaca telemetri endpoint (Sysmon), dan paham cara kerja EDR |
 | 09 | [Threat Intel & IOC](modules/09-threat-intel-ioc.md) | Melakukan enrichment IOC dan memakai threat intelligence |
+
+### Track B — Security Engineering / DevSecOps (Modul 10–14)
+
+> ⚠️ **Penting — baca JD ALTO baik-baik.** Walau judulnya "SOC L2", Job Description posisi ini sebenarnya lebih ke **security engineering / DevSecOps**: integrasi security ke CI/CD, enkripsi & manajemen kunci, IAM, OWASP Top 10, patch management, dan scripting (Python/PowerShell/Bash/Ansible). Monitoring SIEM hanya disebut sebagai "familiarity". **Modul 10–14 menutup gap ini** dan paling relevan untuk posisi ALTO.
+
+| # | Modul | Kamu akan bisa... |
+| --- | --- | --- |
+| 10 | [DevSecOps & CI/CD Security](modules/10-devsecops-cicd.md) | Menyisipkan kontrol keamanan (SAST/DAST/SCA/secret scan) ke pipeline; paham patch & endpoint management |
+| 11 | [Cryptography & PKI](modules/11-cryptography-pki.md) | Membedakan hashing/enkripsi, simetris/asimetris, TLS, sertifikat digital, manajemen kunci |
+| 12 | [Identity & Access Management](modules/12-iam.md) | Menjelaskan AuthN/AuthZ, MFA, RBAC/ABAC, SSO, OAuth/OIDC/SAML, PAM |
+| 13 | [AppSec & OWASP Top 10](modules/13-appsec-owasp.md) | Mengenali & mencegah SQLi, XSS, CSRF, IDOR, dan 10 risiko OWASP |
+| 14 | [Scripting & Automation](modules/14-scripting-automation.md) | Menulis Bash/PowerShell/Python untuk analisis & otomasi; paham Ansible & SOAR |
+
+---
 
 Lanjut ke **[Study Cases](study-cases/)** — 5 skenario investigasi lengkap, mirip kerja SOC nyata.
 Butuh lab & latihan tambahan? Lihat **[resources/labs-and-practice.md](resources/labs-and-practice.md)**.
