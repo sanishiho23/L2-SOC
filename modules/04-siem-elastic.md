@@ -179,3 +179,14 @@ Contoh logika rule "brute force" (threshold):
 ## ➡️ Lanjut
 
 Kamu bisa cari & deteksi. Sekarang pahami *apa* yang kamu cari — taktik penyerang: **[Modul 05 — Threat Landscape](05-threat-landscape.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=04
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

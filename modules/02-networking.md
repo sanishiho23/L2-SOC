@@ -160,3 +160,14 @@ Log yang kamu baca di SIEM datang dari perangkat-perangkat ini. Tahu apa fungsin
 ## ➡️ Lanjut
 
 Kamu paham jalan rayanya. Sekarang belajar membaca "rekaman CCTV"-nya: **[Modul 03 — Logs & Log Analysis](03-logs.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=02
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

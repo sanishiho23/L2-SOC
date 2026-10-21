@@ -141,3 +141,14 @@ Tutup catatan. Jawab dengan kata-katamu sendiri (tulis/ucapkan):
 ## ➡️ Lanjut
 
 Kamu sudah paham "yang dijaga". Sekarang pahami "jalan rayanya": **[Modul 02 — Networking](02-networking.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=01
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

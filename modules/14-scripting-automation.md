@@ -162,3 +162,14 @@ Kamu kini punya dua jalur di repo ini:
 - **Security Engineering/DevSecOps** (Modul 10–14): bangun & amankan — yang paling cocok dengan **JD ALTO**.
 
 Kembali ke [README](../README.md) untuk peta lengkap, atau latih di [resources/labs-and-practice.md](../resources/labs-and-practice.md).
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=14
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

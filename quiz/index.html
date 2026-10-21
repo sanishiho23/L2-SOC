@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L2-SOC Quiz</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1a1d21; --muted:#5b6673; --line:#e2e6ea;
+    --accent:#2f6fed; --accent-weak:#e7f0ff; --good:#1f9d57; --good-weak:#e3f6ec;
+    --bad:#d23f3f; --bad-weak:#fbe7e7; --warn:#c7881a;
+    --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#14171a; --card:#1d2227; --ink:#e8ebee; --muted:#9aa5b1; --line:#2c333a;
+      --accent:#6ea0ff; --accent-weak:#1b2740; --good:#4cc37e; --good-weak:#15271d;
+      --bad:#ef6b6b; --bad-weak:#2a1819; --warn:#e0a94a;
+      --shadow:0 1px 3px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14171a; --card:#1d2227; --ink:#e8ebee; --muted:#9aa5b1; --line:#2c333a;
+    --accent:#6ea0ff; --accent-weak:#1b2740; --good:#4cc37e; --good-weak:#15271d;
+    --bad:#ef6b6b; --bad-weak:#2a1819; --warn:#e0a94a;
+    --shadow:0 1px 3px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+  header.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+  h1{font-size:1.5rem;margin:0}
+  .sub{color:var(--muted);font-size:.92rem;margin:2px 0 20px}
+  .bar{height:10px;background:var(--line);border-radius:99px;overflow:hidden;margin:10px 0 4px}
+  .bar>i{display:block;height:100%;background:var(--accent);width:0;transition:width .4s}
+  .overall{font-size:.9rem;color:var(--muted);margin-bottom:22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .mcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+  .mnum{font-size:.78rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+  .mtitle{font-weight:650;font-size:1.02rem;margin:0}
+  .meta{font-size:.84rem;color:var(--muted)}
+  .chip{display:inline-block;font-size:.76rem;font-weight:600;padding:3px 9px;border-radius:99px}
+  .chip.none{background:var(--line);color:var(--muted)}
+  .chip.pass{background:var(--good-weak);color:var(--good)}
+  .chip.fail{background:var(--bad-weak);color:var(--bad)}
+  button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--line);
+    background:var(--card);color:var(--ink);padding:9px 16px;transition:.15s}
+  button:hover{border-color:var(--accent)}
+  button.primary{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  button.primary:hover{filter:brightness(1.07)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .spacer{flex:1}
+  .mini{font-size:.82rem;padding:6px 10px}
+  /* quiz */
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+  .qcount{font-size:.85rem;color:var(--muted)}
+  .qtext{font-size:1.12rem;font-weight:600;margin:14px 0 18px}
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{display:flex;gap:11px;align-items:flex-start;border:1.5px solid var(--line);border-radius:12px;
+    padding:12px 14px;cursor:pointer;transition:.12s;background:var(--card)}
+  .opt:hover{border-color:var(--accent)}
+  .opt.sel{border-color:var(--accent);background:var(--accent-weak)}
+  .opt .k{font-weight:700;color:var(--muted);min-width:18px}
+  .opt.sel .k{color:var(--accent)}
+  .opt.correct{border-color:var(--good);background:var(--good-weak)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-weak)}
+  .nav{display:flex;justify-content:space-between;margin-top:20px;gap:10px}
+  /* results */
+  .score{font-size:3rem;font-weight:800;line-height:1;margin:6px 0}
+  .verdict{display:inline-block;font-weight:700;padding:6px 16px;border-radius:99px;font-size:1rem}
+  .verdict.pass{background:var(--good-weak);color:var(--good)}
+  .verdict.fail{background:var(--bad-weak);color:var(--bad)}
+  .review{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+  .rq{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card)}
+  .rq .q{font-weight:600;margin-bottom:8px}
+  .rq .line{font-size:.9rem;margin:3px 0}
+  .rq .ok{color:var(--good)} .rq .no{color:var(--bad)}
+  .rq .ex{font-size:.88rem;color:var(--muted);margin-top:8px;border-top:1px dashed var(--line);padding-top:8px}
+  .hide{display:none}
+  a.link{color:var(--accent)}
+  .foot{margin-top:28px;font-size:.82rem;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <!-- HOME -->
+  <section id="home">
+    <header class="top">
+      <h1>🛡️ L2-SOC Quiz</h1>
+      <button class="mini" id="resetBtn" title="Hapus semua progres">Reset progres</button>
+    </header>
+    <div class="sub">Uji pemahamanmu per modul. Lulus di <b>≥ ambang batas</b> (default 80%) untuk menandai modul selesai. Progres tersimpan di browser ini.</div>
+    <div class="overall" id="overallText">—</div>
+    <div class="bar"><i id="overallBar"></i></div>
+    <div id="cards" class="grid" style="margin-top:20px"></div>
+    <div class="foot">Tip: aktifkan GitHub Pages untuk memakai kuis ini online. Progres disimpan per-browser (localStorage).</div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="hide">
+    <div class="row" style="margin-bottom:14px">
+      <button class="mini" id="backBtn">← Daftar modul</button>
+      <div class="spacer"></div>
+    </div>
+    <div class="qcard">
+      <div class="qtop">
+        <b id="qModule"></b>
+        <span class="qcount" id="qCount"></span>
+      </div>
+      <div class="bar"><i id="qBar"></i></div>
+      <div class="qtext" id="qText"></div>
+      <div class="opts" id="qOpts"></div>
+      <div class="nav">
+        <button id="prevBtn">← Sebelumnya</button>
+        <button class="primary" id="nextBtn">Berikutnya →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="result" class="hide">
+    <div class="qcard" style="text-align:center">
+      <div id="rModule" class="mnum"></div>
+      <div class="score" id="rScore"></div>
+      <div id="rVerdict"></div>
+      <div class="meta" id="rDetail" style="margin-top:10px"></div>
+      <div class="row" style="justify-content:center;margin-top:18px">
+        <button class="primary" id="retryBtn">Ulangi kuis</button>
+        <button id="homeBtn">Kembali ke daftar</button>
+      </div>
+    </div>
+    <div class="review" id="rReview"></div>
+  </section>
+</div>
+
+<!-- Bank soal per modul -->
+<script src="questions/01.js"></script>
+<script src="questions/02.js"></script>
+<script src="questions/03.js"></script>
+<script src="questions/04.js"></script>
+<script src="questions/05.js"></script>
+<script src="questions/06.js"></script>
+<script src="questions/07.js"></script>
+<script src="questions/08.js"></script>
+<script src="questions/09.js"></script>
+<script src="questions/10.js"></script>
+<script src="questions/11.js"></script>
+<script src="questions/12.js"></script>
+<script src="questions/13.js"></script>
+<script src="questions/14.js"></script>
+
+<script>
+(function(){
+  "use strict";
+  var DATA = window.QUIZ_DATA || {};
+  var KEY = "l2soc-quiz-progress-v1";
+  var LETTERS = ["A","B","C","D","E"];
+  var el = function(id){return document.getElementById(id);};
+
+  function loadProgress(){
+    try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; }
+  }
+  function saveProgress(p){
+    try{ localStorage.setItem(KEY, JSON.stringify(p)); }catch(e){}
+  }
+  function keys(){ return Object.keys(DATA).sort(); }
+
+  // ---- state ----
+  var state = null; // {id, order:[idx..], answers:[idx|null], pos}
+
+  function shuffle(a){
+    for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
+    return a;
+  }
+
+  // ---- HOME ----
+  function renderHome(){
+    el("home").classList.remove("hide");
+    el("quiz").classList.add("hide");
+    el("result").classList.add("hide");
+    var prog = loadProgress();
+    var ks = keys(), passed = 0;
+    var frag = document.createDocumentFragment();
+    ks.forEach(function(id){
+      var m = DATA[id], pr = prog[id];
+      if(pr && pr.passed) passed++;
+      var card = document.createElement("div"); card.className="mcard";
+      var chip, chipTxt;
+      if(pr && pr.passed){ chip="pass"; chipTxt="Lulus ✓ "+pr.best+"%"; }
+      else if(pr){ chip="fail"; chipTxt="Coba lagi · "+pr.best+"%"; }
+      else { chip="none"; chipTxt="Belum dikerjakan"; }
+      card.innerHTML =
+        '<div class="mnum">Modul '+id+'</div>'+
+        '<div class="mtitle">'+m.title+'</div>'+
+        '<div class="meta">'+m.questions.length+' soal · lulus ≥ '+(m.pass||80)+'%</div>'+
+        '<div><span class="chip '+chip+'">'+chipTxt+'</span></div>';
+      var btn = document.createElement("button");
+      btn.className = "primary mini"; btn.style.marginTop="6px";
+      btn.textContent = pr ? "Ulangi" : "Mulai";
+      btn.onclick = function(){ startQuiz(id); };
+      card.appendChild(btn);
+      frag.appendChild(card);
+    });
+    var c = el("cards"); c.innerHTML=""; c.appendChild(frag);
+    var pct = ks.length ? Math.round(passed/ks.length*100) : 0;
+    el("overallText").textContent = passed+" dari "+ks.length+" modul lulus";
+    el("overallBar").style.width = pct+"%";
+  }
+
+  // ---- QUIZ ----
+  function startQuiz(id){
+    var m = DATA[id];
+    var order = shuffle(m.questions.map(function(_,i){return i;}));
+    state = { id:id, order:order, answers:order.map(function(){return null;}), pos:0 };
+    el("home").classList.add("hide");
+    el("result").classList.add("hide");
+    el("quiz").classList.remove("hide");
+    el("qModule").textContent = "Modul "+id+" — "+m.title;
+    renderQ();
+  }
+
+  function renderQ(){
+    var m = DATA[state.id];
+    var qIdx = state.order[state.pos];
+    var q = m.questions[qIdx];
+    var total = state.order.length;
+    el("qCount").textContent = "Soal "+(state.pos+1)+" / "+total;
+    el("qBar").style.width = Math.round((state.pos)/total*100)+"%";
+    el("qText").textContent = q.q;
+    var box = el("qOpts"); box.innerHTML="";
+    q.options.forEach(function(opt,i){
+      var d = document.createElement("div");
+      d.className = "opt" + (state.answers[state.pos]===i ? " sel":"");
+      d.innerHTML = '<span class="k">'+LETTERS[i]+'</span><span>'+opt+'</span>';
+      d.onclick = function(){ state.answers[state.pos]=i; renderQ(); };
+      box.appendChild(d);
+    });
+    el("prevBtn").disabled = state.pos===0;
+    var last = state.pos===total-1;
+    el("nextBtn").textContent = last ? "Selesai & Nilai" : "Berikutnya →";
+  }
+
+  function next(){
+    var total = state.order.length;
+    if(state.pos < total-1){ state.pos++; renderQ(); }
+    else { finish(); }
+  }
+  function prev(){ if(state.pos>0){ state.pos--; renderQ(); } }
+
+  // ---- RESULTS ----
+  function finish(){
+    var m = DATA[state.id];
+    var correct = 0, total = state.order.length;
+    state.order.forEach(function(qIdx, i){
+      if(state.answers[i] === m.questions[qIdx].answer) correct++;
+    });
+    var pct = Math.round(correct/total*100);
+    var passMark = m.pass || 80;
+    var passed = pct >= passMark;
+
+    // save best
+    var prog = loadProgress();
+    var prev = prog[state.id] || {best:0, attempts:0, passed:false};
+    prog[state.id] = {
+      best: Math.max(prev.best||0, pct),
+      attempts: (prev.attempts||0)+1,
+      passed: prev.passed || passed
+    };
+    saveProgress(prog);
+
+    el("quiz").classList.add("hide");
+    el("result").classList.remove("hide");
+    el("rModule").textContent = "Modul "+state.id+" — "+m.title;
+    el("rScore").textContent = pct+"%";
+    el("rVerdict").innerHTML = passed
+      ? '<span class="verdict pass">LULUS ✓</span>'
+      : '<span class="verdict fail">BELUM LULUS</span>';
+    el("rDetail").textContent = "Benar "+correct+" dari "+total+" soal · ambang lulus "+passMark+"%"
+      + (passed ? " · modul ditandai selesai" : " · ulangi untuk lulus");
+
+    // review
+    var rev = el("rReview"); rev.innerHTML="";
+    state.order.forEach(function(qIdx, i){
+      var q = m.questions[qIdx];
+      var your = state.answers[i];
+      var ok = your === q.answer;
+      var d = document.createElement("div"); d.className="rq";
+      var yourTxt = (your==null) ? "<i>tidak dijawab</i>" : (LETTERS[your]+". "+q.options[your]);
+      d.innerHTML =
+        '<div class="q">'+(i+1)+'. '+q.q+'</div>'+
+        '<div class="line '+(ok?"ok":"no")+'">'+(ok?"✓":"✗")+' Jawabanmu: '+yourTxt+'</div>'+
+        (ok ? "" : '<div class="line ok">✓ Benar: '+LETTERS[q.answer]+". "+q.options[q.answer]+'</div>')+
+        (q.explain ? '<div class="ex">'+q.explain+'</div>' : "");
+      rev.appendChild(d);
+    });
+    window.scrollTo(0,0);
+  }
+
+  // ---- events ----
+  el("nextBtn").onclick = next;
+  el("prevBtn").onclick = prev;
+  el("backBtn").onclick = renderHome;
+  el("homeBtn").onclick = renderHome;
+  el("retryBtn").onclick = function(){ startQuiz(state.id); };
+  el("resetBtn").onclick = function(){
+    if(confirm("Hapus semua progres kuis?")){ saveProgress({}); renderHome(); }
+  };
+
+  // deep link ?m=01
+  function init(){
+    if(!keys().length){
+      el("cards").innerHTML = '<div class="meta">Bank soal belum termuat. Pastikan file di folder <code>questions/</code> ada.</div>';
+      return;
+    }
+    renderHome();
+    var mm = new URLSearchParams(location.search).get("m");
+    if(mm && DATA[mm]) startQuiz(mm);
+  }
+  init();
+})();
+</script>
+</body>
+</html>

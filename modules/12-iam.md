@@ -112,3 +112,14 @@ Bagaimana menentukan "boleh akses apa"?
 ## ➡️ Lanjut
 
 Identitas & kripto mengamankan akses. Sekarang amankan aplikasinya sendiri: **[Modul 13 — AppSec & OWASP Top 10](13-appsec-owasp.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=12
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

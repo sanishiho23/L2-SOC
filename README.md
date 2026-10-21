@@ -80,6 +80,16 @@ Bingung istilah? Buka **[glossary.md](glossary.md)**.
 
 ---
 
+## 🎯 Kuis & sistem skoring (cek kelulusan tiap modul)
+
+Tiap modul punya **kuis pilihan ganda dengan skoring otomatis** — biar kamu tahu pasti sudah lulus modul atau belum (mirip latihan TOEFL). 140 soal, 14 modul, batas lulus 80%, progres tersimpan di browser.
+
+- **Jalankan lokal:** buka [`quiz/index.html`](quiz/index.html) di browser.
+- **Online (setelah GitHub Pages aktif):** `https://sanishiho23.github.io/L2-SOC/quiz/`
+- Panduan lengkap & cara menambah soal: **[quiz/README.md](quiz/README.md)**
+
+Alur belajar yang disarankan: **baca modul → jawab "Cek pemahaman" (Feynman, dengan kata sendiri) → kerjakan kuis sampai ≥ 80% → lanjut modul berikutnya.**
+
 ## Checklist progres
 
 Lihat **[roadmap.md](roadmap.md)** untuk checklist lengkap yang bisa kamu centang sambil jalan.

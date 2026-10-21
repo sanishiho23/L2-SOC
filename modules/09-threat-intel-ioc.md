@@ -122,3 +122,14 @@ Di lingkungan payment, threat intel yang relevan: kampanye skimming/carding yang
 Kamu sudah punya fondasi lengkap: fondasi → jaringan → log → SIEM → ancaman → phishing → IR → endpoint → intel.
 
 **Sekarang buktikan dengan praktik:** kerjakan **[Study Cases](../study-cases/)** satu per satu. Di sanalah semua modul ini bersatu jadi skill nyata.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=09
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

@@ -132,3 +132,14 @@ Di payment: nomor kartu (PAN) dienkripsi at rest, dikirim via TLS in transit, da
 ## ➡️ Lanjut
 
 Kripto melindungi data & identitas. Sekarang pelajari cara mengelola *siapa boleh akses apa*: **[Modul 12 — IAM](12-iam.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=11
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

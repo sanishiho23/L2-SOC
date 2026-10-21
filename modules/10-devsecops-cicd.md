@@ -122,3 +122,14 @@ Infrastruktur payment harus patuh **PCI DSS**, yang mewajibkan: patch tepat wakt
 ## ➡️ Lanjut
 
 Secrets & "enkripsi" terus muncul di atas. Dalami fondasinya: **[Modul 11 — Cryptography & PKI](11-cryptography-pki.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=10
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

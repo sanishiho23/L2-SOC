@@ -135,3 +135,14 @@ Hash Values               ← paling MUDAH diganti penyerang (ganti 1 byte, hash
 ## ➡️ Lanjut
 
 Sekarang dalami vektor serangan #1 yang sudah kamu kenal dari Nanovest: **[Modul 06 — Phishing Analysis](06-phishing-analysis.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=05
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

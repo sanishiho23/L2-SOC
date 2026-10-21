@@ -141,3 +141,14 @@ Di SIEM, semua log ini masuk ke satu tempat. Tapi SIEM hanya sepintar orang yang
 ## ➡️ Lanjut
 
 Kamu bisa baca log mentah. Sekarang pakai mesin yang mengumpulkan jutaan log ini: **[Modul 04 — SIEM & Elastic](04-siem-elastic.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=03
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).

@@ -140,3 +140,14 @@ Phishing test (simulasi) = sisi ofensif/awareness: kamu kirim email tiruan, ukur
 ## ➡️ Lanjut
 
 Kamu bisa investigasi satu vektor. Sekarang pelajari kerangka menangani *insiden apa pun*: **[Modul 07 — Incident Response](07-incident-response.md)**.
+
+---
+
+## 📝 Kuis modul (skoring otomatis)
+
+Sudah paham? Uji dengan **kuis pilihan ganda** dan dapatkan skornya. Lulus **≥ 80%** untuk menandai modul ini selesai.
+
+- **Lokal:** buka `quiz/index.html`, pilih modul ini.
+- **Online (setelah GitHub Pages aktif):** https://sanishiho23.github.io/L2-SOC/quiz/?m=06
+
+Panduan & cara menambah soal: [quiz/README.md](../quiz/README.md).
